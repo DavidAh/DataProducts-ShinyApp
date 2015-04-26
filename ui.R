@@ -7,6 +7,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       helpText("Enter your height and weight to compute your Body Mass Index."),
       br(),
+      
       helpText("Enter your height in feet and inches"),
       numericInput("feet", 
                    label = h3("height in feet"), 
@@ -19,8 +20,8 @@ shinyUI(fluidPage(
       sliderInput("lbs", 
                   label = "Weight in pounds",
                   min = 75, max = 400, value = 100),
-      
-    
+      br(),
+      br(),
       submitButton("Compute BMI", ""),
       br(),
       br()
@@ -28,8 +29,12 @@ shinyUI(fluidPage(
     ),
     mainPanel(
       textOutput("text1"),
+      br(),
       textOutput("text2"),
-      textOutput("BMI")
+      br(),
+      textOutput("BMI"),
+      br(),
+      tableOutput("BMI_table")
       )
   )
 ))
